@@ -1,25 +1,20 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Plus_Jakarta_Sans, Outfit } from 'next/font/google';
 import './globals.css';
-import Navbar from '@/app/components/Navbar';
-import ScrollProgress from '@/app/components/ScrollProgress';
-import FloatingShapes from '@/app/components/FloatingShapes';
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-body' });
+const outfit = Outfit({ subsets: ['latin'], variable: '--font-heading' });
 
 export const metadata: Metadata = {
-  title: 'Shaikh Mohammed Ishaque | Frontend Developer',
-  description: 'Portfolio of Shaikh Mohammed Ishaque, a React.js & Next.js specialist creating cinematic web experiences.',
+  title: 'Shaikh Ishaque — Full Stack Developer',
+  description: 'Portfolio of Shaikh Ishaque, Full Stack Developer',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} bg-[#0f0f0f] text-gray-200 antialiased`}>
-        <ScrollProgress />
-        <Navbar />
-        <FloatingShapes />
-        <main>{children}</main>
+    <html lang="en" className={`${jakarta.variable} ${outfit.variable}`}>
+      <body>
+        {children}
       </body>
     </html>
   );
